@@ -1,15 +1,18 @@
 //  SPDX-License-Identifier: MIT
 pragma solidity ^0.8.7;
-contract Counter{
 
-    uint256 initValue;
+contract Counter {
+    uint public counter;
 
-    constructor (uint256 _initValue){
-            initValue= _initValue;
+    constructor() {
+        counter = 0;
     }
 
-    function add1() public returns (uint256){
-        initValue += 1;
-        return initValue;
+    function count() public {
+        counter = counter + 1;
+    }
+
+    function add(uint x) public {
+        counter = counter + x;
     }
 }
